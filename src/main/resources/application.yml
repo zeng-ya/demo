@@ -1,0 +1,29 @@
+server:
+  port: 8081
+spring:
+  datasource:
+    type: com.alibaba.druid.pool.DruidDataSource #???
+    driver-class-name: com.mysql.cj.jdbc.Driver #???????
+    url: jdbc:mysql://127.0.0.1:3306/yz?characterEncoding=utf-8&serverTimezone=UTC&useSSL=false&allowMultiQueries=true&allowPublicKeyRetrieval=true
+    username: root
+    password: root
+    initialSize: 10
+    minIdle: 5 #???
+    maxActive: 30 #???
+    maxWait: 60000 #????
+mybatis:
+  type-aliases-package: com.example.demo.entity
+  mapper-locations: classpath:mapper/*.xml
+  configuration:
+    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
+logging:
+  config: classpath:logback.xml
+  level:
+    com:
+      springboot: debug
+com:
+  weiz:
+    resource:
+      name: yz
+      website: www.yz.com
+      language: java
